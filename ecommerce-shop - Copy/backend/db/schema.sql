@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS products (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  image_url TEXT NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  old_price DECIMAL(10, 2),
+  on_sale BOOLEAN DEFAULT FALSE,
+  new_arrival BOOLEAN DEFAULT FALSE,
+  category VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+  id SERIAL PRIMARY KEY,
+  items JSONB NOT NULL,
+  subtotal DECIMAL(10, 2) NOT NULL DEFAULT 0,
+  shipping_fee DECIMAL(10, 2) NOT NULL DEFAULT 0,
+  order_total DECIMAL(10, 2) NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW()
+);
