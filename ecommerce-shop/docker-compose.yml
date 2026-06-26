@@ -24,7 +24,7 @@ services:
       PORT: 4000
       NODE_ENV: development
       DB_SSL: "false"
-      CORS_ORIGIN: http://localhost
+      CORS_ORIGIN: http://51.21.100.8
     depends_on:
       db:
         condition: service_healthy
@@ -33,7 +33,7 @@ services:
     build:
       context: ./my-shop
       args:
-        VITE_API_URL: http://localhost:4000
+        VITE_API_URL: http://51.21.100.8:4000
     ports:
       - "80:80"
     depends_on:
