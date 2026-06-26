@@ -33,7 +33,7 @@ services:
     build:
       context: ./my-shop
       args:
-        VITE_API_URL: http://51.21.100.8:4000
+        VITE_API_URL: /api
     ports:
       - "80:80"
     depends_on:
